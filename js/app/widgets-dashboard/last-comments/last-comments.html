@@ -1,0 +1,15 @@
+<div class="panel panel-default"> 
+	<div class="panel-heading"> 
+		<h3 class="panel-title">Comentarios recibidos en los últimos meses</h3> 
+	</div> 
+	<div class="panel-body comments-container chart-content"> 
+        <ul class="list-group">
+            <li ng-repeat="comments in ctrl.lastComments" class="list-group-item">
+                <span class="help-block">
+                    {{ comments.creationDate | date:'dd/MM/yyyy' }}
+                </span>
+                <span>{{comments.details.value}}</span>
+            </li>
+        </ul>
+	</div> 
+</div>

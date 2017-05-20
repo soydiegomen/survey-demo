@@ -1,0 +1,31 @@
+<div class="panel panel-default"> 
+    <div class="panel-heading"> 
+        <h3 class="panel-title">Última encuesta contestada</h3> 
+    </div> 
+    <div class="panel-body">
+    	<div>
+    		<div class="pull-left">
+    			<span class="help-block">Encuesta contestada 
+    				<b>{{ ctrl.answerDate | date:'dd/MM/yyyy HH:mm' }}</b>
+    			</span>
+    		</div>
+    		<div class="pull-right">
+    			<span class="help-block">Key: <b>{{ ctrl.key }}</b></span>
+    		</div>
+    		<div class="clearfix"></div>
+    	</div>
+    	<div class="list-group survey-container">
+			<div ng-repeat="question in ctrl.questions" class="list-group-item">
+				<h5 class="list-group-item-heading">{{ question.text }}</h5>
+				<span class="list-group-item-text">{{ question.answer }}</span>
+			</div>
+		</div> 
+		<nav>
+		  <ul class="pager">
+		    <li><a href ng-click="ctrl.getBeforAnswer();" ng-show="ctrl.showBeforeButton">Anterior</a></li>
+		    <li><a href ng-click="ctrl.getNextAnswer();" ng-show="ctrl.showNextButton">Siguiente</a></li>
+		  </ul>
+		</nav>
+		<!-- end panel-body -->
+    </div> 
+</div>
